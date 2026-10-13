@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="theme-color" content="#050917"><title>NEON CLASH — 1 VS 1</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="bootScreen" class="bootScreen" role="status" aria-live="polite">
+  <div class="bootArtwork"><div class="bootOrb"></div><div class="bootSlash blueSlash"></div><div class="bootSlash redSlash"></div><div class="bootTower">NC</div></div>
+  <div class="bootBrand"><div class="bootLogo">N</div><div><b>NEON<span>CLASH</span></b><small>FIGHTER PROTOCOL // SEASON 01</small></div></div>
+  <div class="bootBottom"><div class="bootStatus"><span id="bootStatus">INITIALIZING ARENA</span><b id="bootPercent">0%</b></div><div class="bootTrack"><i id="bootBar"></i></div><small>OPTIMIZED FOR MOBILE · 1 VS 1 COMBAT</small></div>
+  <button id="skipBoot" class="skipBoot">LEWATI INTRO ↗</button>
+</div>
+
+<div id="rotateNotice"><div class="rotateIcon">▱</div><b>PUTAR PERANGKAT</b><span>Mainkan dalam mode landscape untuk pengalaman terbaik.</span></div>
+<div id="app">
+  <header class="topbar"><div class="brand"><span class="brandMark">N</span><div><b>NEON<span>CLASH</span></b><small>ARENA PROTOCOL // 01</small></div></div><div class="currency"><span>◉ <b id="coins">12,450</b></span><span class="diamonds">◆ <b id="gems">680</b></span><button class="iconBtn" id="soundBtn" aria-label="Suara">♫</button></div></header>
+  <main id="lobby" class="screen active">
+    <div class="heroBg"></div><div class="lobbyTop"><div class="profile"><div class="avatar">R</div><div><b id="playerName">REX</b><small>LV. 15 <span class="onlineDot">●</span> ONLINE</small></div><div class="rankMini">♜ <span>SILVER II</span></div></div><div class="topLinks"><button data-page="events">EVENT</button><button id="tutorialBtn">CARA MAIN</button><button data-page="settings">⚙</button></div></div>
+    <div class="lobbyStage"><div class="stageGlow"></div><div class="stageLabel"><small>FIGHTER SELECTED</small><h2 id="heroName">VOLT // REX</h2><p>NEON STRIKER · ASSAULT</p><div class="heroStats"><span>POWER <i><b style="width:86%"></b></i></span><span>SPEED <i><b style="width:72%"></b></i></span><span>SKILL <i><b style="width:91%"></b></i></span></div></div><canvas id="heroCanvas" width="600" height="720" aria-label="Animasi karakter Volt"></canvas><div class="petDrone">✦<small>DRONE COMPANION</small></div><div class="stageFloor"></div></div>
+    <aside class="leftNav"><button class="navItem selected" data-page="lobby"><span>⌂</span> BERANDA</button><button class="navItem" data-page="fighters"><span>♙</span> FIGHTER</button><button class="navItem" data-page="skins"><span>◇</span> SKIN</button><button class="navItem" data-page="inventory"><span>▣</span> INVENTORI</button><button class="navItem" data-page="rank"><span>♜</span> RANK</button><button class="navItem" data-page="events"><span>✦</span> EVENT</button><button class="navItem" data-page="settings"><span>⚙</span> PENGATURAN</button></aside>
+    <div class="rightCards"><button class="promoCard" data-page="events"><span class="tag">LIMITED EVENT</span><b>CYBER<br>ASCENSION</b><small>LOGIN HARIAN · HADIAH GRATIS</small><span class="promoArt">✦</span></button><button class="modeCard" id="quickMode"><span class="modeIcon">⚔</span><span><small>MODE TERPILIH</small><b id="modeLabel">VERSUS AI</b><em>1 VS 1 · BEST OF 1</em></span><span class="arrow">›</span></button><button class="startBtn" id="startBtn"><span>MASUK ARENA</span><b>FIGHT <span>↗</span></b></button></div>
+    <div class="bottomDock"><button class="dockActive" data-page="lobby">⌂ <small>LOBBY</small></button><button data-page="fighters">♙ <small>FIGHTER</small></button><button data-page="skins">◇ <small>SKIN</small></button><button data-page="rank">♜ <small>RANK</small></button><button data-page="settings">⚙ <small>SETTING</small></button></div>
+  </main>
+  <section id="subpage" class="screen subpage"><button class="backBtn" id="backBtn">← KEMBALI</button><div id="subContent"></div></section>
+  <section id="battle" class="screen battle"><canvas id="gameCanvas"></canvas><div class="battleHud"><div class="fighterHud leftHud"><div class="miniPortrait blue">R</div><div class="hudInfo"><b>REX <small>LV.15</small></b><div class="healthTrack"><i id="pHealth"></i></div><div class="energyTrack"><i id="pEnergy"></i></div></div></div><div class="roundInfo"><b>1 <span>VS</span> 1</b><strong id="timer">60</strong><small>ROUND 01</small></div><div class="fighterHud rightHud"><div class="hudInfo"><b>SHADE <small>LV.15</small></b><div class="healthTrack"><i id="eHealth"></i></div><div class="energyTrack"><i id="eEnergy"></i></div></div><div class="miniPortrait red">S</div></div></div>
+  <div class="battleTopButtons"><button id="pauseBtn">Ⅱ</button><button id="exitBattle">×</button></div><div id="battleMessage" class="battleMessage"><b>READY?</b><small>FIGHTER PROTOCOL ONLINE</small></div>
+  <div class="touchControls"><div id="joystick" class="joystick"><div class="joyRing"><div id="joyKnob"></div></div></div><div class="actionButtons"><button class="action skill" data-action="skill">✦<small>SKILL</small></button><button class="action dodge" data-action="dodge">➤<small>DODGE</small></button><button class="action kick" data-action="kick">KICK<small>LOW</small></button><button class="action punch" data-action="punch">FIST<small>ATTACK</small></button><button class="action jump" data-action="jump">↟<small>JUMP</small></button><button class="action block" data-action="block">⬡<small>BLOCK</small></button></div></div>
+  <div id="pauseOverlay" class="overlay"><div class="dialog"><small>COMBAT SYSTEM</small><h2>PAUSED</h2><p>Pertarungan dijeda.</p><button class="primary" id="resumeBtn">LANJUTKAN</button><button id="restartBtn">ULANGI MATCH</button><button id="quitBtn">KELUAR KE LOBBY</button></div></div>
+  <div id="resultOverlay" class="overlay"><div class="dialog resultDialog"><small id="resultKicker">MATCH COMPLETE</small><h2 id="resultTitle">VICTORY</h2><p id="resultText">Arena milikmu.</p><div class="reward">◉ <b id="rewardCoins">+250</b> <span>COINS</span></div><button class="primary" id="rematchBtn">REMATCH</button><button id="resultLobbyBtn">KEMBALI KE LOBBY</button></div></div>
+  </section>
+</div>
+<script src="game.js"></script>
+</body></html>
